@@ -1,0 +1,155 @@
+:root {
+    --g: rgb(52, 243, 189);
+    --dg: rgb(0, 120, 86);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+body {
+    height: 700px;
+    background: var(--g);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    width: 390px;
+    height: 350px;
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgba(117, 117, 117, 0.475);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.logoImg {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.logoImg>p {
+    margin-top: 15px;
+    color: var(--dg);
+    font-size: 11px;
+}
+
+img#imgLogo{
+    width:70px; 
+    height: 70px;
+}
+
+div.inputSection {
+    height: 200px;
+    margin-top: 50px;
+}
+
+
+form {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input.loginInput {
+    width: 280px;
+    height: 40px;
+    color: var(--dg);
+    border: none;
+    border-bottom: 2px solid var(--dg);
+    outline: none;
+    font-size: 14px;
+}
+
+input#studentNum {
+    margin-top: 30px;
+}
+
+p#errorLogin {
+    margin-top: 10px;
+    font-size: 12px;
+    color: red;
+    visibility: hidden;
+}
+
+button#signIn {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--dg);
+    color: white;
+    margin-top: 20px;
+}
+
+button#signIn:hover
+{
+    background-color:rgb(0, 94, 67);
+}
+@media(max-width: 469px)
+{
+    body
+    {
+        background-color: white;
+    }
+    div.container
+    {
+        box-shadow: none;
+    }
+}
+
+@media(max-width: 331px)
+{
+    div.container
+    {
+        width: 250px;
+    }
+    div.logoImg
+    {
+        width: 170px;
+    }
+    img#imgLogo
+    {
+        width: 55px;
+        height: 55px;
+    }
+    input.loginInput 
+    {
+        width: 220px;
+        border-width: 2px;
+        font-size: 12px;
+    }
+    button#signIn
+    {
+        padding: 7px;
+        font-size: 13px;
+
+    }
+}
+
+@media(max-width: 233px)
+{
+    input.loginInput 
+    {
+        width: 200px;
+        border-width: 2px;
+        font-size: 12px;
+    }
+    button#signIn
+    {
+        padding: 7px;
+        font-size: 11px;
+    }
+}
