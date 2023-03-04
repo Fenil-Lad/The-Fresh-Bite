@@ -48,6 +48,7 @@ div.logoImg>p {
 img#imgLogo{
     width:70px; 
     height: 70px;
+    border-radius: 5px;
 }
 
 div.inputSection {
