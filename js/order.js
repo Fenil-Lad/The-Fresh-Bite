@@ -9,8 +9,7 @@ function displayOrders() {
         { orderNumber: 003, customerName: "Bob Johnson", totalItems: 3, status: "Delivered" },
         { orderNumber: 003, customerName: "Bob Johnson", totalItems: 3, status: "Delivered" },
         { orderNumber: 003, customerName: "Bob Johnson", totalItems: 3, status: "Delivered" },
-        // { orderNumber: 003, customerName: "Bob Johnson", totalItems: 3, status: "Delivered" },
-        // { orderNumber: 003, customerName: "Bob Johnson", totalItems: 3, status: "Delivered" }
+        //You can add more 
     ];
     const tbody = document.getElementById('tbody');
     for(let index = 0; index< orders.length;index++)
