@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
-<script src="js/student.js"></script>
+    <script src="js/student.js"></script>
 
     <title>The Fresh Bite | Student</title>
 </head>
@@ -19,78 +19,44 @@
     <header>
         <img src="img/logo.png" alt="logoImg" id="imgLogo">
         <h1>Student</h1>
+        <img src="img/menu-icon.png" alt="menu-icon" id="menuIcon" onclick="toggleButton();">
     </header>
 
     <div class="container">
         <!-- Past orders section -->
         <div id="container1">
-           <ul class="listMenu">
-            <li class="listItems" id='menuItem1'onclick="orderToggleDisplay();">New Order</li>
-            <li class="listItems" id='menuItem2'onclick="prevToggleDisplay();">Previous Orders</li>
-           </ul>
+            <ul class="listMenu">
+                <li class="listItems" id='menuItem1' onclick="toggleMenu(this.id)">New Order</li>
+                <li class="listItems" id='menuItem2' onclick="toggleMenu(this.id);">Previous Orders</li>
+            </ul>
         </div>
         <!--  Order option section starts  -->
-        <div id="container2">
+        <div id="orderMenuPage"></div>
 
-            <div class="catag">
+        <div id="container2">
+            <div class="catag" id="apps" onclick="openMenu(this.id);">
                 Appetizers
             </div>
-            <div class="catag">
+            <div class="catag" id="mainDishes" onclick="openMenu(this.id);">
                 Main dishes
             </div>
-            <div class="catag">
+            <div class="catag" id="sides" onclick="openMenu(this.id);">
                 Sides
             </div>
-            <div class="catag">
+            <div class="catag" id="beverages" onclick="openMenu(this.id);">
                 Beverages
             </div>
-            <div class="catag">
+            <div class="catag" id="soups" onclick="openMenu(this.id);">
                 Soups
             </div>
-            <div class="catag">
+            <div class="catag" id="salads" onclick="openMenu(this.id);">
                 Salads
             </div>
-            <div class="catag">
+            <div class="catag" id="pastaDishes" onclick="openMenu(this.id);">
                 Pasta Dishes
             </div>
-            <div class="catag">
+            <div class="catag" id="riceDishes" onclick="openMenu(this.id);">
                 Rice dishes
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Sides
-            </div>
-            <div class="catag">
-                Beverages
-            </div>
-            <div class="catag">
-                Soups
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Rice dishes
-            </div>
-            <div class="catag">
-                Sides
-            </div>
-            <div class="catag">
-                Beverages
-            </div>
-            <div class="catag">
-                Soups
             </div>
         </div>
         <!-- Order option section over-->
@@ -98,17 +64,14 @@
             <div class="orderList">Order no. 1</div>
             <div class="orderList">Order no. 1</div>
             <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
         </div>
     </div>
+
+    <div id="orderMenuCart"></div>
+
     <div id="bottomDiv">
-        <button id='cartButton'>View cart</button>
+        <p id="logOutIcon">Log out</p>
+        <button id="cartButton" onclick="displayCart();">View cart</button>
     </div>
 </body>
 

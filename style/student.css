@@ -14,52 +14,7 @@
 body {
     background-color: var(--dg);
 }
-div.container {
-    width: 100%;
-    min-height: 665px;
-    display: flex;
-    flex-direction: row;
-}
-/* Menu section starts */
 
-div#container1 {
-    width: 20%;
-    height: inherit;
-    background-color: var(--g);
-}
-
-ul.listMenu
-{
-    width: 100%;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 20px;
-}
-
-li.listItems
-{
-    width: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    color: var(--dg);
-}
-li.listItems:hover
-{
-    cursor: pointer;
-}
-
-#menuItem1
-{
-    background-color:rgb(0, 120, 86);
-    color:white;
-}
-
-/* Menu section over */
-/* Order option section starts */
 header {
     height: 80px;
     background-color: var(--g);
@@ -72,24 +27,102 @@ img#imgLogo {
     width: 65px;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
 }
 
 header>h1 {
     font-size: 25px;
     margin-left: 15px;
     color: var(--dg);
+    cursor: pointer;
+    user-select: none;
 }
+
+
+img#menuIcon {
+    display: none;
+    width: 25px;
+    position: absolute;
+    right: 2%;
+    filter: invert(100);
+
+}
+
+div.container {
+    width: 100%;
+    min-height: 665px;
+    height: 610px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Menu section starts */
+
+div#container1 {
+    width: 20%;
+    background-color: var(--g);
+    display: block;
+}
+
+ul.listMenu {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+li.listItems {
+    width: inherit;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dg);
+}
+
+li.listItems:hover {
+    cursor: pointer;
+}
+
+#menuItem1 {
+    background-color: rgb(0, 120, 86);
+    color: white;
+}
+
+/* Menu section over */
+
+/* Order Menu Items display starts*/
+div#orderMenuPage {
+    display: none;
+    position: absolute;
+    top: 13%;
+    right: 22%;
+    width: 800px;
+    height: 600px;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
+    border-radius: 10px;
+
+}
+
+/* Order Menu Items display over*/
+
+/* Order option section starts */
+
 
 div#container2 {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 165px);
-    grid-template-rows: repeat(3, 165px);
+    grid-template-rows: repeat(2, 165px);
     grid-row-gap: 50px;
     grid-column-gap: 40px;
     color: var(--dg);
     width: 80%;
-    height: inherit;
     padding: 70px;
 }
 
@@ -103,41 +136,40 @@ div.catag {
     font-size: 20px;
     background-color: white;
     border-radius: 10px;
+    user-select: none;
 }
 
 div.catag:hover {
     color: rgb(0, 82, 59);
     box-shadow: 10px 10px 10px rgba(54, 54, 54, 0.451);
     transition: .25s;
+    cursor: pointer;
 }
 
 /* Order option section over */
 
-div#container3
-{
+div#container3 {
     display: none;
     justify-content: center;
     grid-template-columns: repeat(1, 700px);
-    grid-template-rows: repeat(10, 60px);
+    grid-template-rows: repeat(2, 60px);
     grid-row-gap: 30px;
-    color: var(--dg);   
+    color: var(--dg);
     width: 80%;
-    height: inherit;
-    padding: 30px;
+    padding-top: 50px;
 }
 
-div.orderList
-{
+div.orderList {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
     width: 800px;
     height: 60px;
+    border-radius: 10px;
 }
 
-div.orderList:hover
-{
+div.orderList:hover {
     color: rgb(0, 82, 59);
     box-shadow: 10px 10px 10px rgba(54, 54, 54, 0.451);
     transition: .25s;
@@ -146,8 +178,7 @@ div.orderList:hover
 
 /* Bottom div starts */
 
-div#bottomDiv
-{
+div#bottomDiv {
     width: 100%;
     height: 60px;
     background-color: var(--g);
@@ -159,8 +190,22 @@ div#bottomDiv
     padding: 10px;
 }
 
-button#cartButton
-{
+p#logOutIcon {
+    color: white;
+    background-color: var(--dg);
+    padding: 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+p#logOutIcon:hover {
+    background-color: rgb(0, 82, 59);
+    transition: .25s;
+}
+
+button#cartButton {
     background-color: var(--dg);
     color: white;
     border: none;
@@ -169,9 +214,138 @@ button#cartButton
     font-size: 15px;
 }
 
-button#cartButton:hover
-{
+button#cartButton:hover {
     background-color: rgb(0, 86, 62);
     transition: .25s;
+    cursor: pointer;
 }
+
+div#orderMenuCart {
+    display: none;
+    position: absolute;
+    top: 13%;
+    right: 22%;
+    width: 800px;
+    height: 600px;
+    z-index: 1;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
+    border-radius: 10px;
+}
+
 /* Bottom div ends*/
+
+
+@media(max-width: 1274px) {
+    div#container2 {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(4, 165px);
+        grid-template-rows: repeat(2, 165px);
+        grid-row-gap: 40px;
+        grid-column-gap: 30px;
+        color: var(--dg);
+        width: 80%;
+        padding: 70px;
+    }
+
+    div#container3 {
+        padding: 30px;
+    }
+}
+
+
+@media(max-width: 1141px) {
+    header>h1 {
+        font-size: 23px;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    img#imgLogo {
+        width: 50px;
+    }
+
+    div.orderList {
+        width: 700px;
+        height: 50px;
+        font-size: 15px;
+    }
+
+    li.listItems {
+        font-size: 17px;
+    }
+
+    div#bottomDiv {
+        width: 100%;
+        height: 50px;
+        background-color: var(--g);
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    p#logOutIcon {
+        color: white;
+        background-color: var(--dg);
+        padding: 7px;
+        font-size: 13px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    button#cartButton {
+        background-color: var(--dg);
+        color: white;
+        border: none;
+        padding: 7px;
+        font-size: 13px;
+        border-radius: 5px;
+    }
+}
+
+@media(max-width: 975px)
+{
+    img#menuIcon
+    {
+        display: block;
+    }
+    div#container1
+    {
+        display: none;
+        width: 100%;
+    }
+    div#container2
+    {
+        width: 100%;
+    }
+    div#container3
+    {
+        width: 100%;
+    }
+}
+
+@media(max-width: 766px)
+{
+    div#container2
+    {
+        grid-template-columns: repeat(3, 165px);
+        grid-template-rows: repeat(3, 165px);
+        grid-row-gap: 40px;
+        grid-column-gap: 20px;
+    }
+}
+
+@media(max-width: 716px)
+{
+    div#container3
+    {
+        width: 400px;
+    }
+}
