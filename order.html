@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style/order.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
+
     <title>The Fresh Bite | Orders List</title>
 </head>
 
@@ -17,21 +18,55 @@
     <header>
         <img src="img/logo.png" alt="logoImg" id="imgLogo">
         <h1>Orders</h1>
+        <img src="img/menu-icon.png" alt="menu-icon" id="menuIcon" onclick="toggleButton();">
     </header>
-    <table>
-        <table id="container">
-            <thead>
-                <tr>
-                    <th>Order No.</th>
-                    <th>Ordered by</th>
-                    <th>Total Items</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="tbody">
-            </tbody>
 
-        </table>
+    <div class="container">
+        <!-- Past orders section -->
+        <div id="container1">
+            <ul class="listMenu">
+                <li class="listItems" id='menuItem1' onclick="toggleMenu(this.id);">Pending Orders</li>
+                <li class="listItems" id='menuItem2' onclick="toggleMenu(this.id);">Past Orders</li>
+            </ul>
+        </div>
+        <!--  Order option section starts  -->
+        <div id="orderMenuPage"></div>
+        <div class="container2" id="container2">
+            <div class="orderListHead">
+                <p class="orderId">Order ID</p>
+                <p class="totalItems">Total Items</p>
+                <p class="timePlaced">Date</p>
+                <p class="orderStatus">Status</p>
+            </div>
+            <div class="orderList">
+                <p class="orderId">#1423444</p>
+                <p class="totalItems">50</p>
+                <p class="timePlaced">11/03/2023</p>
+                <p class="orderStatus">Pending</p>
+            </div>
+        </div>
+        <div class="container2" id="container3">
+            <div class="orderListHead">
+                <p class="orderId">Order ID</p>
+                <p class="totalItems">Total Items</p>
+                <p class="timePlaced">Date</p>
+                <p class="orderStatus">Status</p>
+            </div>
+            <div class="orderList">
+                <p class="orderId">#1423444</p>
+                <p class="totalItems">50</p>
+                <p class="timePlaced">11/03/2023</p>
+                <p class="orderStatus">Pending</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="bottomDiv">
+        <button id="logOutIcon">Log out</button>
+    </div>
 </body>
-    <script src="js/order.js"></script>  
+<script src="js/order.js"></script>
+
 </html>

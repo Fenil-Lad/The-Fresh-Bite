@@ -1,6 +1,7 @@
 :root {
-    --g: rgb(52, 243, 189);
-    --dg: rgb(0, 120, 86);
+    --g: #93fd91;
+    --dg: #179b51;
+    --hoverg: rgb(0, 82, 59);
 }
 
 * {
@@ -16,11 +17,11 @@ body {
 }
 
 header {
+    width: 100%;
     height: 80px;
     background-color: var(--g);
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
 
 img#imgLogo {
@@ -52,7 +53,6 @@ img#menuIcon {
 div.container {
     width: 100%;
     min-height: 665px;
-    height: 610px;
     display: flex;
     flex-direction: row;
 }
@@ -63,11 +63,12 @@ div#container1 {
     width: 20%;
     background-color: var(--g);
     display: block;
+    height: inherit;
 }
 
 ul.listMenu {
     width: 100%;
-    min-height: 150px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +89,7 @@ li.listItems:hover {
 }
 
 #menuItem1 {
-    background-color: rgb(0, 120, 86);
+    background-color: var(--dg);
     color: white;
 }
 
@@ -102,7 +103,7 @@ div#orderMenuPage {
     right: 22%;
     width: 800px;
     height: 600px;
-    z-index: 1;
+    z-index: 2;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
     border-radius: 10px;
@@ -115,6 +116,7 @@ div#orderMenuPage {
 
 
 div#container2 {
+    width: 80%;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 165px);
@@ -122,8 +124,8 @@ div#container2 {
     grid-row-gap: 50px;
     grid-column-gap: 40px;
     color: var(--dg);
-    width: 80%;
-    padding: 70px;
+    padding: 40px;
+    margin-bottom: 60px;
 }
 
 div.catag {
@@ -149,36 +151,73 @@ div.catag:hover {
 /* Order option section over */
 
 div#container3 {
+    width: 80%;
+    height: inherit;
     display: none;
     justify-content: center;
-    grid-template-columns: repeat(1, 700px);
+    grid-template-columns: repeat(1, 1000px);
     grid-template-rows: repeat(2, 60px);
     grid-row-gap: 30px;
     color: var(--dg);
-    width: 80%;
-    padding-top: 50px;
+    padding: 50px;
+    margin-bottom: 60px;
 }
+
+div.orderListHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    color: white;
+    width: 1000px;
+    height: 60px;
+    border-radius: 10px;
+}
+
 
 div.orderList {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
-    width: 800px;
+    width: 1000px;
     height: 60px;
     border-radius: 10px;
 }
 
 div.orderList:hover {
-    color: rgb(0, 82, 59);
+    color: var(--hoverg);
     box-shadow: 10px 10px 10px rgba(54, 54, 54, 0.451);
     transition: .25s;
+    cursor: pointer;
 }
 
+p.orderId {
+    text-align: center;
+    width: 80px;
+    margin-left: 50px;
+}
+
+p.totalItems {
+    text-align: center;
+    width: 80px;
+}
+
+p.timePlaced {
+    text-align: center;
+    width: 85px;
+}
+
+p.orderStatus {
+    text-align: center;
+    width: 85px;
+    margin-right: 50px;
+}
 
 /* Bottom div starts */
 
 div#bottomDiv {
+    display: none;
     width: 100%;
     height: 60px;
     background-color: var(--g);
@@ -187,21 +226,25 @@ div#bottomDiv {
     align-items: center;
     position: fixed;
     bottom: 0;
+    z-index: 1;
     padding: 10px;
 }
 
-p#logOutIcon {
+button#logOutIcon {
     color: white;
     background-color: var(--dg);
-    padding: 9px;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
+    font-size: 15px;
+
 }
 
 
-p#logOutIcon:hover {
-    background-color: rgb(0, 82, 59);
+button#logOutIcon:hover {
+    background-color: var(--hoverg);
     transition: .25s;
 }
 
@@ -215,19 +258,19 @@ button#cartButton {
 }
 
 button#cartButton:hover {
-    background-color: rgb(0, 86, 62);
+    background-color: var(--hoverg);
     transition: .25s;
     cursor: pointer;
 }
 
 div#orderMenuCart {
     display: none;
-    position: absolute;
+    position: relative;
     top: 13%;
     right: 22%;
     width: 800px;
     height: 600px;
-    z-index: 1;
+    z-index: 2;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
     border-radius: 10px;
@@ -236,26 +279,35 @@ div#orderMenuCart {
 /* Bottom div ends*/
 
 
-@media(max-width: 1274px) {
+@media(max-width: 1280px) {
     div#container2 {
-        display: grid;
         justify-content: center;
         grid-template-columns: repeat(4, 165px);
         grid-template-rows: repeat(2, 165px);
         grid-row-gap: 40px;
         grid-column-gap: 30px;
-        color: var(--dg);
-        width: 80%;
-        padding: 70px;
     }
 
     div#container3 {
-        padding: 30px;
+        grid-template-columns: repeat(1, 900px);
+        grid-row-gap: 20px;
+        padding: 10px;
     }
+
+    div.orderListHead {
+        width: 900px;
+    }
+
+
+    div.orderList {
+        width: 900px;
+    }
+
 }
 
 
 @media(max-width: 1141px) {
+
     header>h1 {
         font-size: 23px;
     }
@@ -268,10 +320,20 @@ div#orderMenuCart {
         width: 50px;
     }
 
+    div#container3 {
+        grid-template-columns: repeat(1, 700px);
+        grid-row-gap: 20px;
+        padding: 10px;
+    }
+
+    div.orderListHead {
+        width: 700px;
+    }
+
+
     div.orderList {
         width: 700px;
-        height: 50px;
-        font-size: 15px;
+
     }
 
     li.listItems {
@@ -290,7 +352,7 @@ div#orderMenuCart {
         padding: 10px;
     }
 
-    p#logOutIcon {
+    button#logOutIcon {
         color: white;
         background-color: var(--dg);
         padding: 7px;
@@ -310,42 +372,227 @@ div#orderMenuCart {
     }
 }
 
-@media(max-width: 975px)
-{
-    img#menuIcon
-    {
+@media(max-width: 975px) {
+
+    img#menuIcon {
         display: block;
     }
-    div#container1
-    {
+
+    div#container1 {
         display: none;
         width: 100%;
+        position: absolute;
+        z-index: 3;
+        height: 120px;
     }
-    div#container2
-    {
+
+    div#container2 {
         width: 100%;
+        padding: 20px;
     }
-    div#container3
-    {
+
+    div#container3 {
         width: 100%;
+        grid-template-columns: repeat(1, 600px);
+        grid-row-gap: 20px;
+    }
+
+    div.orderListHead {
+        width: 600px;
+    }
+
+    div.orderList {
+        width: 600px;
+    }
+
+}
+@media(max-width: 647px)
+{
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 550px);
+        grid-row-gap: 20px;
+    }
+
+    div.orderListHead {
+        width: 550px;
+    }
+
+    div.orderList {
+        width: 550px;
     }
 }
 
-@media(max-width: 766px)
-{
-    div#container2
-    {
+@media(max-width: 766px) {
+
+    header {
+        height: 50px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    div#container2 {
         grid-template-columns: repeat(3, 165px);
         grid-template-rows: repeat(3, 165px);
         grid-row-gap: 40px;
         grid-column-gap: 20px;
     }
+
+    button#cartButton {
+        font-size: 12px;
+    }
+
+    #menuIcon {
+        margin-right: 10px;
+    }
+
 }
 
-@media(max-width: 716px)
+
+@media(max-width: 567px) {
+    div#container2 {
+        grid-template-columns: repeat(2, 165px);
+        grid-template-rows: repeat(4, 165px);
+        grid-row-gap: 40px;
+        grid-column-gap: 20px;
+    }
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 450px);
+        grid-row-gap: 20px;
+        font-size: 15px;
+    }
+
+    div.orderListHead {
+        width: 450px;
+    }
+
+    div.orderList {
+        width: 450px;
+    }
+ 
+}
+
+
+@media(max-width: 479px)
 {
-    div#container3
-    {
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 400px);
+        grid-row-gap: 20px;
+        font-size: 15px;
+    }
+
+    div.orderListHead {
         width: 400px;
     }
+
+    div.orderList {
+        width: 400px;
+    }
+    p.orderId
+    {
+        margin-left: 10px;
+    }
+    p.orderStatus
+    {
+        margin-right: 10px;
+    }
 }
+
+@media(max-width: 417px)
+{
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 325px);
+        grid-row-gap: 20px;
+        font-size: 13px;
+    }
+
+    div.orderListHead {
+        width: 325px;
+    }
+
+    div.orderList {
+        width: 325px;
+    }
+    p.orderId
+    {
+        margin-left: 5px;
+    }
+    p.orderStatus
+    {
+        margin-right: 5px;
+    }
+}
+
+
+@media(max-width: 375px) {
+    div#container2 {
+        grid-template-columns: repeat(1, 200px);
+        grid-template-rows: repeat(8, 200px);
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        padding: 10px;
+    }
+
+    div.catag {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media(max-width: 342px)
+{
+    header h1
+    {
+        margin-left: 5px;
+    }
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 275px);
+        grid-row-gap: 15px;
+        font-size: 13px;
+    }
+
+    div.orderListHead {
+        width: 275px;
+    }
+
+    div.orderList {
+        width: 275px;
+    }
+    p.orderId
+    {
+        margin-left: 0px;
+    }
+    p.orderStatus
+    {
+        margin-right: 0px;
+    }
+}
+
+@media(max-width: 284px)
+{
+    div#container3 {
+        width: 100%;
+        grid-template-columns: repeat(1, 220px);
+        grid-row-gap: 15px;
+        font-size: 11px;
+    }
+
+    div.orderListHead {
+        width: 220px;
+    }
+
+    div.orderList {
+        width: 220px;
+    }
+}
+
+/* @media(max-width: 230px)
+{
+
+} */

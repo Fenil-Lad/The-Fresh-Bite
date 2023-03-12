@@ -1,6 +1,7 @@
 :root {
-    --g: rgb(52, 243, 189);
-    --dg: rgb(0, 120, 86);
+    --g: #93fd91;
+    --dg: #179b51;
+    --hoverg: rgb(0, 82, 59);
 }
 
 * {
@@ -88,7 +89,7 @@ p#errorLogin {
 
 button#signIn {
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: none;
     background-color: var(--dg);
     color: white;
@@ -97,7 +98,8 @@ button#signIn {
 
 button#signIn:hover
 {
-    background-color:rgb(0, 94, 67);
+    background-color: var(--hoverg);
+    transition: .25s;
 }
 @media(max-width: 469px)
 {

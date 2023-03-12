@@ -1,10 +1,10 @@
 :root {
-    --g: rgb(52, 243, 189);
-    --dg: rgb(0, 120, 86);
+    --g: #93fd91;
+    --dg: #179b51;
+    --hoverg: rgb(0, 82, 59);
 }
 
-*
-{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'Signika Negative', sans-serif;
@@ -12,126 +12,477 @@
     overflow-x: hidden;
 }
 
-header
-{
+body {
+    background-color: var(--dg);
+}
+
+header {
+    width: 100%;
     height: 80px;
     background-color: var(--g);
     display: flex;
     align-items: center;
-    overflow: hidden;
 }
 
-body
-{
-    background-color: var(--dg);
-}
-img#imgLogo
-{
+img#imgLogo {
     width: 65px;
     border-radius: 5px;
     margin-left: 10px;
+    cursor: pointer;
+    user-select: none;
 }
 
-header>h1
-{
+header>h1 {
     font-size: 25px;
     margin-left: 15px;
     color: var(--dg);
+    cursor: pointer;
+    user-select: none;
 }
 
-table#container
-{
-    min-height: 60px;
+
+img#menuIcon {
+    display: none;
+    width: 25px;
+    position: absolute;
+    right: 2%;
+    filter: invert(100);
+
+}
+
+div.container {
     width: 100%;
-    border-spacing: 0px 7px;
-    padding: 20px;
+    min-height: 665px;
+    display: flex;
+    flex-direction: row;
 }
 
-thead
-{
-    color: var(--g);
-    height: 100px;
+/* Menu section starts */
+
+div#container1 {
+    width: 20%;
+    background-color: var(--g);
+    display: block;
+    height: inherit;
 }
 
-thead>tr{
-    color: white;
-    height: 50px;
-    background-color: var(--dg);
+ul.listMenu {
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 20px;
 }
 
-tbody>tr
-{
+li.listItems {
+    width: inherit;
     height: 60px;
-    width: 100px;
-    text-align: center;
-    background-color: white;
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--dg);
 }
 
-@media(max-width: 469px)
+li.listItems:hover {
+    cursor: pointer;
+}
+
+#menuItem1
 {
-    img#imgLogo
-    {
-        margin: 0px;
+    background-color: var(--dg);
+    color: white;
+}
+/* Menu section over */
+
+/* Order Menu Items display starts*/
+div#orderMenuPage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    width: 800px;
+    height: 600px;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
+    border-radius: 10px;
+
+}
+
+/* Order Menu Items display over*/
+
+div.container2 {
+    width: 80%;
+    height: inherit;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1000px);
+    grid-template-rows: repeat(2, 60px);
+    grid-row-gap: 30px;
+    color: var(--dg);
+    padding: 50px;
+    margin-bottom: 60px;
+}
+
+div.orderListHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    color: white;
+    width: 1000px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+
+div.orderList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 1000px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+div.orderList:hover {
+    color: var(--hoverg);
+    box-shadow: 10px 10px 10px rgba(54, 54, 54, 0.451);
+    transition: .25s;
+    cursor: pointer;
+}
+
+p.orderId {
+    text-align: center;
+    width: 80px;
+    margin-left: 50px;
+}
+
+p.totalItems {
+    text-align: center;
+    width: 80px;
+}
+
+p.timePlaced {
+    text-align: center;
+    width: 85px;
+}
+
+p.orderStatus {
+    text-align: center;
+    width: 85px;
+    margin-right: 50px;
+}
+
+/* menu starts*/
+div#container3
+{
+    display: none;
+}
+
+/* menu over */
+
+/* Bottom div starts */
+
+div#bottomDiv {
+    display: none;
+    width: 100%;
+    height: 60px;
+    background-color: var(--g);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    padding: 10px;
+}
+
+button#logOutIcon {
+    color: white;
+    background-color: var(--dg);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 15px;
+
+}
+
+
+button#logOutIcon:hover {
+    background-color: var(--hoverg);
+    transition: .25s;
+}
+
+
+
+/* Bottom div ends*/
+
+
+@media(max-width: 1280px) {
+    div.container2 {
+        grid-template-columns: repeat(1, 900px);
+        grid-row-gap: 20px;
+        padding: 10px;
     }
-    header
-    {
+
+    div.orderListHead {
+        width: 900px;
+    }
+
+
+    div.orderList {
+        width: 900px;
+    }
+
+}
+
+
+@media(max-width: 1141px) {
+
+    header>h1 {
+        font-size: 23px;
+    }
+
+    header {
         height: 60px;
     }
-    header>h1
-    {
-        font-size: 25px;
+
+    img#imgLogo {
+        width: 50px;
     }
-    table#container
-    {
-        padding: 0px;
+
+    div.container2 {
+        grid-template-columns: repeat(1, 700px);
+        grid-row-gap: 20px;
+        padding: 10px;
     }
-    thead>tr
-    {
+
+    div.orderListHead {
+        width: 700px;
+    }
+
+
+    div.orderList {
+        width: 700px;
+
+    }
+
+    li.listItems {
         font-size: 17px;
     }
-    tbody>tr
-    {
-        font-size: 17px;
+
+    div#bottomDiv {
+        width: 100%;
+        height: 50px;
+        background-color: var(--g);
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        padding: 10px;
+    }
+
+    button#logOutIcon {
+        color: white;
+        background-color: var(--dg);
+        padding: 7px;
+        font-size: 13px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
     }
 }
 
-@media(max-width: 331px)
+@media(max-width: 975px) {
+
+    img#menuIcon {
+        display: block;
+    }
+
+    div#container1 {
+        display: none;
+        width: 100%;
+        position: absolute;
+        z-index: 3;
+        height: 180px;
+    }
+
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 600px);
+        grid-row-gap: 20px;
+    }
+
+    div.orderListHead {
+        width: 600px;
+    }
+
+    div.orderList {
+        width: 600px;
+    }
+
+}
+@media(max-width: 647px)
 {
-    img#imgLogo
-    {
-        margin: 0px;
-        width: 30px;
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 550px);
+        grid-row-gap: 20px;
     }
-    header
-    {
-        height: 30px;
+
+    div.orderListHead {
+        width: 550px;
     }
-    header>h1
-    {
+
+    div.orderList {
+        width: 550px;
+    }
+}
+
+@media(max-width: 766px) {
+
+    header {
+        height: 50px;
+    }
+
+    header h1 {
         font-size: 20px;
     }
-    thead>tr
-    {
-        font-size: 15px;
+    #menuIcon {
+        margin-right: 10px;
     }
-    tbody>tr
-    {
-        font-size: 15px;
-    }
+
 }
 
-@media(max-width: 233px)
+
+@media(max-width: 567px) {
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 450px);
+        grid-row-gap: 20px;
+        font-size: 15px;
+    }
+
+    div.orderListHead {
+        width: 450px;
+    }
+
+    div.orderList {
+        width: 450px;
+    }
+ 
+}
+
+
+@media(max-width: 479px)
 {
-    thead>tr
-    {
-        font-size: 12px;
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 400px);
+        grid-row-gap: 20px;
+        font-size: 15px;
     }
-    tbody>tr
+
+    div.orderListHead {
+        width: 400px;
+    }
+
+    div.orderList {
+        width: 400px;
+    }
+    p.orderId
     {
-        font-size: 12px;
+        margin-left: 10px;
+    }
+    p.orderStatus
+    {
+        margin-right: 10px;
     }
 }
 
+@media(max-width: 417px)
+{
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 325px);
+        grid-row-gap: 20px;
+        font-size: 13px;
+    }
+
+    div.orderListHead {
+        width: 325px;
+    }
+
+    div.orderList {
+        width: 325px;
+    }
+    p.orderId
+    {
+        margin-left: 5px;
+    }
+    p.orderStatus
+    {
+        margin-right: 5px;
+    }
+}
+
+
+@media(max-width: 342px)
+{
+    header h1
+    {
+        margin-left: 5px;
+    }
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 275px);
+        grid-row-gap: 15px;
+        font-size: 13px;
+    }
+
+    div.orderListHead {
+        width: 275px;
+    }
+
+    div.orderList {
+        width: 275px;
+    }
+    p.orderId
+    {
+        margin-left: 0px;
+    }
+    p.orderStatus
+    {
+        margin-right: 0px;
+    }
+}
+
+@media(max-width: 284px)
+{
+    div.container2 {
+        width: 100%;
+        grid-template-columns: repeat(1, 220px);
+        grid-row-gap: 15px;
+        font-size: 11px;
+    }
+
+    div.orderListHead {
+        width: 220px;
+    }
+
+    div.orderList {
+        width: 220px;
+    }
+}
+
+/* @media(max-width: 230px)
+{
+
+} */

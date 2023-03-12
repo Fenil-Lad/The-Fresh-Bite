@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
-    <script src="js/student.js"></script>
 
     <title>The Fresh Bite | Student</title>
 </head>
@@ -34,45 +33,20 @@
         <div id="orderMenuPage"></div>
 
         <div id="container2">
-            <div class="catag" id="apps" onclick="openMenu(this.id);">
-                Appetizers
-            </div>
-            <div class="catag" id="mainDishes" onclick="openMenu(this.id);">
-                Main dishes
-            </div>
-            <div class="catag" id="sides" onclick="openMenu(this.id);">
-                Sides
-            </div>
-            <div class="catag" id="beverages" onclick="openMenu(this.id);">
-                Beverages
-            </div>
-            <div class="catag" id="soups" onclick="openMenu(this.id);">
-                Soups
-            </div>
-            <div class="catag" id="salads" onclick="openMenu(this.id);">
-                Salads
-            </div>
-            <div class="catag" id="pastaDishes" onclick="openMenu(this.id);">
-                Pasta Dishes
-            </div>
-            <div class="catag" id="riceDishes" onclick="openMenu(this.id);">
-                Rice dishes
-            </div>
         </div>
         <!-- Order option section over-->
         <div id="container3">
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
-            <div class="orderList">Order no. 1</div>
+            <div class="orderListHead"><p class="orderId">Order ID</p><p class="totalItems">Total Items</p><p class="timePlaced">Date</p><p class="orderStatus">Status</p></div>
+            <!-- <div class="orderList"><p class="orderId">#1423444</p><p class="totalItems">50</p><p class="timePlaced">11/03/2023</p><p class="orderStatus">Completed</p></div> -->
         </div>
     </div>
-
     <div id="orderMenuCart"></div>
 
     <div id="bottomDiv">
-        <p id="logOutIcon">Log out</p>
+        <button id="logOutIcon">Log out</button>
         <button id="cartButton" onclick="displayCart();">View cart</button>
     </div>
 </body>
+<script src="js/student.js"></script>
 
 </html>
