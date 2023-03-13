@@ -150,7 +150,7 @@ div.catag:hover {
 
 /* Order option section over */
 
-div#container3 {
+div.container3 {
     width: 80%;
     height: inherit;
     display: none;
@@ -214,6 +214,8 @@ p.orderStatus {
     margin-right: 50px;
 }
 
+
+
 /* Bottom div starts */
 
 div#bottomDiv {
@@ -263,18 +265,83 @@ button#cartButton:hover {
     cursor: pointer;
 }
 
+/* Cart Menu starts */
+div.container4 {
+    width: 80%;
+    height: inherit;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1000px);
+    grid-template-rows: repeat(10, 60px);
+    grid-row-gap: 30px;
+    color: var(--dg);
+    margin-bottom: 60px;
+    padding: 50px;
+}
+
 div#orderMenuCart {
     display: none;
-    position: relative;
-    top: 13%;
-    right: 22%;
-    width: 800px;
-    height: 600px;
-    z-index: 2;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(54, 54, 54, 0.451);
-    border-radius: 10px;
 }
+
+#backArrow {
+    width: 30px;
+    height: 30px;
+    rotate: 180deg;
+}
+
+div.cartHead {
+    width: 1000px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+div.cartHead h2 {
+    font-size: 30px;
+    margin-right: auto;
+}
+
+#backArrow {
+    margin-right: auto;
+}
+
+div#itemHead {
+    background: none;
+    color: white;
+}
+
+div.item {
+    background-color: white;
+    color: var(--dg);
+    width: 1000px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p.itemName {
+    width: 80px;
+    text-align: center;
+}
+
+div.ItemCount {
+    width: 80px;
+    text-align: center;
+}
+
+p.totalCost {
+    width: 80px;
+    text-align: center;
+}
+
+/* Cart Menu ends */
+
 
 /* Bottom div ends*/
 
@@ -288,11 +355,12 @@ div#orderMenuCart {
         grid-column-gap: 30px;
     }
 
-    div#container3 {
+    div.container3 {
         grid-template-columns: repeat(1, 900px);
         grid-row-gap: 20px;
         padding: 10px;
     }
+
 
     div.orderListHead {
         width: 900px;
@@ -303,6 +371,22 @@ div#orderMenuCart {
         width: 900px;
     }
 
+    div.container4 {
+        grid-template-columns: repeat(1, 900px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 900px;
+    }
+
+    div.cartHead h2 {
+        font-size: 30px;
+    }
+
+    div.item {
+        width: 900px;
+    }
 }
 
 
@@ -320,7 +404,7 @@ div#orderMenuCart {
         width: 50px;
     }
 
-    div#container3 {
+    div.container3 {
         grid-template-columns: repeat(1, 700px);
         grid-row-gap: 20px;
         padding: 10px;
@@ -337,6 +421,30 @@ div#orderMenuCart {
     }
 
     li.listItems {
+        font-size: 17px;
+    }
+
+
+    div.container4 {
+        grid-template-columns: repeat(1, 700px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 700px;
+    }
+
+    div.cartHead h2 {
+        font-size: 25px;
+    }
+
+    #backArrow {
+        width: 25px;
+        height: 25px;
+    }
+
+    div.item {
+        width: 700px;
         font-size: 17px;
     }
 
@@ -391,7 +499,7 @@ div#orderMenuCart {
         padding: 20px;
     }
 
-    div#container3 {
+    div.container3 {
         width: 100%;
         grid-template-columns: repeat(1, 600px);
         grid-row-gap: 20px;
@@ -405,11 +513,23 @@ div#orderMenuCart {
         width: 600px;
     }
 
-}
-@media(max-width: 647px)
-{
-    div#container3 {
+    div.container4 {
         width: 100%;
+        grid-template-columns: repeat(1, 600px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 600px;
+    }
+
+    div.item {
+        width: 600px;
+    }
+}
+
+@media(max-width: 647px) {
+    div.container3 {
         grid-template-columns: repeat(1, 550px);
         grid-row-gap: 20px;
     }
@@ -420,6 +540,24 @@ div#orderMenuCart {
 
     div.orderList {
         width: 550px;
+    }
+
+    div.container4 {
+        grid-template-columns: repeat(1, 550px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 550px;
+    }
+
+    div.item {
+        width: 550px;
+    }
+
+    #backArrow {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -458,7 +596,8 @@ div#orderMenuCart {
         grid-row-gap: 40px;
         grid-column-gap: 20px;
     }
-    div#container3 {
+
+    div.container3 {
         width: 100%;
         grid-template-columns: repeat(1, 450px);
         grid-row-gap: 20px;
@@ -472,13 +611,24 @@ div#orderMenuCart {
     div.orderList {
         width: 450px;
     }
- 
+
+    div.container4 {
+        grid-template-columns: repeat(1, 450px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 450px;
+    }
+
+    div.item {
+        width: 450px;
+    }
 }
 
 
-@media(max-width: 479px)
-{
-    div#container3 {
+@media(max-width: 479px) {
+    div.container3 {
         width: 100%;
         grid-template-columns: repeat(1, 400px);
         grid-row-gap: 20px;
@@ -492,20 +642,33 @@ div#orderMenuCart {
     div.orderList {
         width: 400px;
     }
-    p.orderId
-    {
+
+    p.orderId {
         margin-left: 10px;
     }
-    p.orderStatus
-    {
+
+    p.orderStatus {
         margin-right: 10px;
+    }
+
+
+    div.container4 {
+        width: 100%;
+        grid-template-columns: repeat(1, 400px);
+        grid-row-gap: 20px;
+    }
+
+    div.cartHead {
+        width: 400px;
+    }
+
+    div.item {
+        width: 400px;
     }
 }
 
-@media(max-width: 417px)
-{
-    div#container3 {
-        width: 100%;
+@media(max-width: 417px) {
+    div.container3 {
         grid-template-columns: repeat(1, 325px);
         grid-row-gap: 20px;
         font-size: 13px;
@@ -518,18 +681,50 @@ div#orderMenuCart {
     div.orderList {
         width: 325px;
     }
-    p.orderId
-    {
+
+    p.orderId {
         margin-left: 5px;
     }
-    p.orderStatus
-    {
+
+    p.orderStatus {
         margin-right: 5px;
+    }
+
+    div.container4 {
+        grid-template-columns: repeat(1, 400px);
+        grid-row-gap: 20px;
+        font-size: 13px;
+    }
+
+    div.cartHead {
+        width: 400px;
+    }
+
+    div.item {
+        width: 400px;
+    }
+
+}
+
+@media(max-width: 411px)
+{
+    
+    div.container4 {
+        grid-template-columns: repeat(1, 370px);
+        grid-row-gap: 20px;
+        font-size: 13px;
+    }
+
+    div.cartHead {
+        width: 370px;
+    }
+
+    div.item {
+        width: 370px;
     }
 }
 
-
-@media(max-width: 375px) {
+@media(max-width: 376px) {
     div#container2 {
         grid-template-columns: repeat(1, 200px);
         grid-template-rows: repeat(8, 200px);
@@ -542,15 +737,28 @@ div#orderMenuCart {
         width: 200px;
         height: 200px;
     }
+
+    div.container4 {
+        grid-template-columns: repeat(1, 310px);
+        grid-row-gap: 20px;
+        font-size: 13px;
+    }
+
+    div.cartHead {
+        width: 310px;
+    }
+
+    div.item {
+        width: 310px;
+    }
 }
 
-@media(max-width: 342px)
-{
-    header h1
-    {
+@media(max-width: 342px) {
+    header h1 {
         margin-left: 5px;
     }
-    div#container3 {
+
+    div.container3 {
         width: 100%;
         grid-template-columns: repeat(1, 275px);
         grid-row-gap: 15px;
@@ -564,19 +772,36 @@ div#orderMenuCart {
     div.orderList {
         width: 275px;
     }
-    p.orderId
-    {
+
+    p.orderId {
         margin-left: 0px;
     }
-    p.orderStatus
-    {
+
+    p.orderStatus {
         margin-right: 0px;
+    }
+
+    div.container4 {
+        grid-template-columns: repeat(1, 275px);
+        grid-row-gap: 15px;
+        font-size: 11px;
+    }
+
+    div.cartHead {
+        width: 275px;
+    }
+
+    div.item {
+        width: 275px;
+    }
+    div.cartHead h2
+    {
+        font-size: 20px;
     }
 }
 
-@media(max-width: 284px)
-{
-    div#container3 {
+@media(max-width: 284px) {
+    div.container3 {
         width: 100%;
         grid-template-columns: repeat(1, 220px);
         grid-row-gap: 15px;
@@ -590,9 +815,22 @@ div#orderMenuCart {
     div.orderList {
         width: 220px;
     }
+
+    div.container4 {
+        width: 100%;
+        grid-template-columns: repeat(1, 230px);
+        grid-template-rows: repeat(3, 50px);
+        grid-row-gap: 15px;
+        font-size: 11px;
+    }
+
+    div.cartHead {
+        width: 230px;
+        height: 50px;
+    }
+
+    div.item {
+        width: 230px;
+        height: 50px;
+    }
 }
-
-/* @media(max-width: 230px)
-{
-
-} */

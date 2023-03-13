@@ -1,7 +1,8 @@
+
+let displayItem = ['#container2', '#container3', '#orderMenuCart'];
+let menuItem = ['#menuItem1', '#menuItem2', '#cartButton'];
 // Display Menu According to the selection
 
-let displayItem = ['#container2', '#container3'];
-let menuItem = ['#menuItem1', '#menuItem2'];
 function toggleMenu(elementId) {
     let SMenuItem;
     let SDisplayItem;
@@ -10,16 +11,29 @@ function toggleMenu(elementId) {
         if (elementId == menuItem[index]) {
             SMenuItem = document.querySelector(menuItem[index]);
             SDisplayItem = document.querySelector(displayItem[index]);
-            SMenuItem.style.color = 'white';
-            SMenuItem.style.backgroundColor = '#179b51';
+            if (menuItem[index] == menuItem[2]) {
+                SMenuItem.style.color = '#179b51';
+                SMenuItem.style.background = 'none';
+            }
+            else {
+                SMenuItem.style.color = 'white';
+                SMenuItem.style.backgroundColor = '#179b51';
+            }
             SDisplayItem.style.display = 'grid';
         }
         else if (elementId != menuItem[index]) {
             SMenuItem = document.querySelector(menuItem[index]);
             SDisplayItem = document.querySelector(displayItem[index]);
-            SMenuItem.style.color = '#179b51';
-            SMenuItem.style.background = 'none';
+            if (menuItem[index] == menuItem[2]) {
+                SMenuItem.style.color = 'white';
+                SMenuItem.style.backgroundColor = '#179b51';
+            }
+            else {
+                SMenuItem.style.color = '#179b51';
+                SMenuItem.style.background = 'none';
+            }
             SDisplayItem.style.display = 'none';
+
         }
     }
 }
@@ -32,19 +46,6 @@ let page;
 
 function openMenu() {
     page = document.querySelector('#orderMenuPage');
-    if (page.style.display == 'none') {
-        page.style.display = 'block';
-    }
-    else if (page.style.display != 'none') {
-        page.style.display = 'none';
-    }
-}
-
-// Open Menu according to click over
-
-
-function displayCart() {
-    page = document.querySelector('#orderMenuCart');
     if (page.style.display == 'none') {
         page.style.display = 'block';
     }
@@ -96,33 +97,33 @@ displayOrders();
 
 function displayMenuList() {
     const orders = [
-        { category: 'Appetizers'},
-        { category: 'Main dishes'},
-        { category: 'Sides'},
-        { category: 'Beverages'},
-        { category: 'Soups'},
-        { category: 'Salads'},
-        { category: 'Pasta Dishes'},
-        { category: 'Rice dishes'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'},
-        { category: 'Food'}
+        { category: 'Appetizers' },
+        { category: 'Main dishes' },
+        { category: 'Sides' },
+        { category: 'Beverages' },
+        { category: 'Soups' },
+        { category: 'Salads' },
+        { category: 'Pasta Dishes' },
+        { category: 'Rice dishes' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' },
+        { category: 'Food' }
         //You can add more 
     ];
     let container2 = document.querySelector('#container2');
@@ -131,3 +132,4 @@ function displayMenuList() {
     }
 }
 displayMenuList();
+

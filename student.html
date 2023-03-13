@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
 
     <title>The Fresh Bite | Student</title>
 </head>
@@ -35,16 +36,42 @@
         <div id="container2">
         </div>
         <!-- Order option section over-->
-        <div id="container3">
-            <div class="orderListHead"><p class="orderId">Order ID</p><p class="totalItems">Total Items</p><p class="timePlaced">Date</p><p class="orderStatus">Status</p></div>
-            <!-- <div class="orderList"><p class="orderId">#1423444</p><p class="totalItems">50</p><p class="timePlaced">11/03/2023</p><p class="orderStatus">Completed</p></div> -->
+        <div class="container3" id="container3">
+            <div class="orderListHead">
+                <p class="orderId">Order ID</p>
+                <p class="totalItems">Total Items</p>
+                <p class="timePlaced">Date</p>
+                <p class="orderStatus">Status</p>
+            </div>
+        </div>
+        <div class="container4" id="orderMenuCart">
+            <div class="cartHead">
+                <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" colors="primary:#ffffff"
+                    id="backArrow" state="hover-1">
+                </lord-icon>
+                <h2>Your Cart</h2>
+            </div>
+            <div class="item" id="itemHead">
+                <p class="itemName">Item</p>
+                <div class="ItemCount">Count</div>
+                <p class="totalCost">Cost</p>
+            </div>
+            <div class="item">
+                <p class="itemName">Bhurji</p>
+                <div class="ItemCount"> <span class="decrement">-</span> 2 <span class="increment">+</span></div>
+                <p class="totalCost">$26.34</p>
+            </div>
+            <div class="item">
+                <p class="itemName">Bhurji</p>
+                <div class="ItemCount"> <span class="decrement">-</span> 2 <span class="increment">+</span></div>
+                <p class="totalCost">$26.34</p>
+            </div>
         </div>
     </div>
-    <div id="orderMenuCart"></div>
 
     <div id="bottomDiv">
         <button id="logOutIcon">Log out</button>
-        <button id="cartButton" onclick="displayCart();">View cart</button>
+        <button id="cartButton" onclick="toggleMenu(this.id);">View cart</button>
     </div>
 </body>
 <script src="js/student.js"></script>
