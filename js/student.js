@@ -1,12 +1,10 @@
-
-let displayItem = ['#container2', '#container3', '#orderMenuCart'];
-let menuItem = ['#menuItem1', '#menuItem2', '#cartButton'];
+let displayItem = ['#container2', '#container3', '#orderMenuCart', '#subMenu'];
+let menuItem = ['#menuItem1', '#menuItem2', '#cartButton', '.catag'];
 // Display Menu According to the selection
 
 function toggleMenu(elementId) {
     let SMenuItem;
     let SDisplayItem;
-    elementId = '#' + elementId;
     for (let index = 0; index < menuItem.length; index++) {
         if (elementId == menuItem[index]) {
             SMenuItem = document.querySelector(menuItem[index]);
@@ -14,6 +12,10 @@ function toggleMenu(elementId) {
             if (menuItem[index] == menuItem[2]) {
                 SMenuItem.style.color = '#179b51';
                 SMenuItem.style.background = 'none';
+            }
+            else if (menuItem[index] == menuItem[3]) {
+                SMenuItem.style.color = '#179b51';
+                SMenuItem.style.backgroundColor = 'white';
             }
             else {
                 SMenuItem.style.color = 'white';
@@ -28,6 +30,10 @@ function toggleMenu(elementId) {
                 SMenuItem.style.color = 'white';
                 SMenuItem.style.backgroundColor = '#179b51';
             }
+            else if (menuItem[index] == menuItem[3]) {
+                SMenuItem.style.color = '#179b51';
+                SMenuItem.style.backgroundColor = 'white';
+            }
             else {
                 SMenuItem.style.color = '#179b51';
                 SMenuItem.style.background = 'none';
@@ -37,6 +43,28 @@ function toggleMenu(elementId) {
         }
     }
 }
+// Display Ordering Menu List
+
+
+function displayMenuList() {
+    const order = [
+        { category: 'Appetizers', id: 'apps' },
+        { category: 'Main dishes', id: 'mainDishes' },
+        { category: 'Sides', id: 'sides' },
+        { category: 'Beverages', id: 'beverages' },
+        { category: 'Soups', id: 'soups' },
+        { category: 'Salads', id: 'salads' },
+        { category: 'Pasta Dishes', id: 'pastaDishes' },
+        { category: 'Rice dishes', id: 'riceDishes' },
+        { category: 'Food', id: 'food' },
+        //You can add more 
+    ];
+    let container2 = document.querySelector('#container2');
+    for (let index = 0; index < order.length; index++) {
+        container2.innerHTML += `<div class="catag" id="${order[index].id}" onclick="toggleMenu('.'+this.className); lastMenuVar ='#menuItem1'">${order[index].category}</div>`;
+    }
+}
+displayMenuList();
 
 
 // Open Menu according to click
@@ -45,7 +73,7 @@ let SMenuVariety;
 let page;
 
 function openMenu() {
-    page = document.querySelector('#orderMenuPage');
+    page = document.querySelector('#orderMe');
     if (page.style.display == 'none') {
         page.style.display = 'block';
     }
@@ -92,44 +120,69 @@ function displayOrders() {
 
 displayOrders();
 
-// Display Ordering Menu List
 
-
-function displayMenuList() {
-    const orders = [
-        { category: 'Appetizers' },
-        { category: 'Main dishes' },
-        { category: 'Sides' },
-        { category: 'Beverages' },
-        { category: 'Soups' },
-        { category: 'Salads' },
-        { category: 'Pasta Dishes' },
-        { category: 'Rice dishes' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' },
-        { category: 'Food' }
-        //You can add more 
+// Displaying Cart values
+function displayCart() {
+    const order = [
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
     ];
-    let container2 = document.querySelector('#container2');
-    for (let index = 0; index < orders.length; index++) {
-        container2.innerHTML += `<div class="catag" onclick="openMenu();">${orders[index].category}</div>`;
+    let menuCart = document.querySelector('#orderMenuCart');
+    for (let index = 0; index < order.length; index++) {
+        menuCart.innerHTML += ` <div class="item"><p class="itemName">${order[index].item}</p><div class="ItemCount"><span class="decrement">-</span>${order[index].count}<span class="increment">+</span></div><p class="totalCost">${order[index].cost}</p></div>`;
     }
 }
-displayMenuList();
+
+displayCart();
+
+// Displaying Cart values
+function displaySubItems() {
+    const order = [
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '3', cost: '$43' },
+    ];
+    let subMenu = document.querySelector('#subMenu');
+    for (let index = 0; index < order.length; index++) {
+        subMenu.innerHTML += ` <div class="item"><p class="itemName">${order[index].item}</p><div class="ItemCount"><span class="decrement">-</span>${order[index].count}<span class="increment">+</span></div><p class="totalCost">${order[index].cost}</p></div>`;
+    }
+}
+
+displaySubItems();
+
+
+
+//remembers which menu was open before this one
+var lastMenuVar = '#menuItem1';
+function lastMenu(elementId) {
+    lastMenuVar = elementId;
+}
+// backButton function
+const backButton = document.querySelector('#backArrow');
+backButton.addEventListener('click', event => {
+    toggleMenu(lastMenuVar);
+});
+
+// backButton function
+const backItem = document.querySelector('#backArrowItem');
+backItem.addEventListener('click', event => {
+    toggleMenu('#menuItem1');
+});
 

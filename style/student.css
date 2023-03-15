@@ -286,6 +286,7 @@ div#orderMenuCart {
     width: 30px;
     height: 30px;
     rotate: 180deg;
+    margin-right: auto;
 }
 
 div.cartHead {
@@ -300,10 +301,6 @@ div.cartHead {
 
 div.cartHead h2 {
     font-size: 30px;
-    margin-right: auto;
-}
-
-#backArrow {
     margin-right: auto;
 }
 
@@ -341,6 +338,21 @@ p.totalCost {
 }
 
 /* Cart Menu ends */
+
+/* Sub menu starts */
+#subMenu
+{
+    display: none;
+}
+
+
+#backArrowItem {
+    width: 30px;
+    height: 30px;
+    rotate: 180deg;
+    margin-right: auto;
+}
+/* Sub menu ends */
 
 
 /* Bottom div ends*/
@@ -439,6 +451,10 @@ p.totalCost {
     }
 
     #backArrow {
+        width: 25px;
+        height: 25px;
+    }
+    #backArrowItem {
         width: 25px;
         height: 25px;
     }
@@ -556,6 +572,10 @@ p.totalCost {
     }
 
     #backArrow {
+        width: 20px;
+        height: 20px;
+    }
+    #backArrowItem {
         width: 20px;
         height: 20px;
     }
@@ -706,9 +726,8 @@ p.totalCost {
 
 }
 
-@media(max-width: 411px)
-{
-    
+@media(max-width: 411px) {
+
     div.container4 {
         grid-template-columns: repeat(1, 370px);
         grid-row-gap: 20px;
@@ -794,8 +813,8 @@ p.totalCost {
     div.item {
         width: 275px;
     }
-    div.cartHead h2
-    {
+
+    div.cartHead h2 {
         font-size: 20px;
     }
 }

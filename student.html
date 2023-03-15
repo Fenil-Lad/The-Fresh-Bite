@@ -26,13 +26,11 @@
         <!-- Past orders section -->
         <div id="container1">
             <ul class="listMenu">
-                <li class="listItems" id='menuItem1' onclick="toggleMenu(this.id)">New Order</li>
-                <li class="listItems" id='menuItem2' onclick="toggleMenu(this.id);">Previous Orders</li>
+                <li class="listItems" id='menuItem1' onclick="toggleMenu('#'+this.id); lastMenu('#'+this.id);">New Orders</li>
+                <li class="listItems" id='menuItem2' onclick="toggleMenu('#'+this.id); lastMenu('#'+this.id);">Previous Orders</li>
             </ul>
         </div>
         <!--  Order option section starts  -->
-        <div id="orderMenuPage"></div>
-
         <div id="container2">
         </div>
         <!-- Order option section over-->
@@ -46,9 +44,7 @@
         </div>
         <div class="container4" id="orderMenuCart">
             <div class="cartHead">
-                <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" colors="primary:#ffffff"
-                    id="backArrow" state="hover-1">
-                </lord-icon>
+                <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" colors="primary:#ffffff" id="backArrow" state="hover-1"></lord-icon>
                 <h2>Your Cart</h2>
             </div>
             <div class="item" id="itemHead">
@@ -56,22 +52,24 @@
                 <div class="ItemCount">Count</div>
                 <p class="totalCost">Cost</p>
             </div>
-            <div class="item">
-                <p class="itemName">Bhurji</p>
-                <div class="ItemCount"> <span class="decrement">-</span> 2 <span class="increment">+</span></div>
-                <p class="totalCost">$26.34</p>
+        </div>
+        <div class="container4" id="subMenu">
+            <div class="cartHead">
+                <lord-icon src="https://cdn.lordicon.com/jxwksgwv.json" trigger="hover" colors="primary:#ffffff" id="backArrowItem" state="hover-1"></lord-icon>
+                <h2 id="catagoryHead">Appetizers</h2>
             </div>
-            <div class="item">
-                <p class="itemName">Bhurji</p>
-                <div class="ItemCount"> <span class="decrement">-</span> 2 <span class="increment">+</span></div>
-                <p class="totalCost">$26.34</p>
+            <div class="item" id="itemHead">
+                <p class="itemName">Item</p>
+                <div class="ItemCount">Count</div>
+                <p class="totalCost">Cost</p>
             </div>
+
         </div>
     </div>
 
     <div id="bottomDiv">
         <button id="logOutIcon">Log out</button>
-        <button id="cartButton" onclick="toggleMenu(this.id);">View cart</button>
+        <button id="cartButton" onclick="toggleMenu('#'+this.id);">View cart</button>
     </div>
 </body>
 <script src="js/student.js"></script>
