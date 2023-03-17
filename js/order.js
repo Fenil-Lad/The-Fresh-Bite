@@ -82,3 +82,15 @@ function displayPastOrders() {
 displayPastOrders();
 
 
+// Log out alert
+let alertBox = document.querySelector('.logOutAlert');
+alertBox.style.display = 'none';
+function logOutAlert() {
+
+    if (alertBox.style.display == 'none') {
+        alertBox.style.display = 'flex';
+    }
+    else if (alertBox.style.display != 'none') {
+        alertBox.style.display = 'none';
+    }
+}

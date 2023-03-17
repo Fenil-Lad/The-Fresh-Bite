@@ -214,6 +214,18 @@ p.orderStatus {
     margin-right: 50px;
 }
 
+span.increment {
+    margin-left: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+span.decrement {
+    margin-right: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
 
 
 /* Bottom div starts */
@@ -289,6 +301,20 @@ div#orderMenuCart {
     margin-right: auto;
 }
 
+button#addToCart {
+    color: var(--dg);
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+button#addToCart:hover {
+    background-color: var(--hoverg);
+    color: white;
+    transition: .25s;
+}
+
 div.cartHead {
     width: 1000px;
     height: 60px;
@@ -340,8 +366,7 @@ p.totalCost {
 /* Cart Menu ends */
 
 /* Sub menu starts */
-#subMenu
-{
+#subMenu {
     display: none;
 }
 
@@ -352,7 +377,59 @@ p.totalCost {
     rotate: 180deg;
     margin-right: auto;
 }
+
 /* Sub menu ends */
+
+/* Alert Box Design starts */
+div.logOutAlert {
+    z-index: 1000;
+    background-color: white;
+    color: var(--dg);
+    position: fixed;
+    top: 20px;
+    right: 40%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.295);
+}
+
+div.logOutAlert img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+p.confirmQuestion {
+    font-size: 15px;
+}
+
+div.buttonDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+button.alertButton {
+    width: 40px;
+    background-color: var(--dg);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+button.alertButton:hover {
+    background-color: var(--hoverg);
+    transition: .25s;
+}
+
+/* Alert Box Design ends*/
+
 
 
 /* Bottom div ends*/
@@ -398,6 +475,10 @@ p.totalCost {
 
     div.item {
         width: 900px;
+    }
+
+    div.logOutAlert{
+        right: 35%;
     }
 }
 
@@ -454,6 +535,7 @@ p.totalCost {
         width: 25px;
         height: 25px;
     }
+
     #backArrowItem {
         width: 25px;
         height: 25px;
@@ -493,6 +575,11 @@ p.totalCost {
         padding: 7px;
         font-size: 13px;
         border-radius: 5px;
+    }
+
+    button#cartButton:hover {
+        background-color: var(--hoverg);
+        transition: .25s;
     }
 }
 
@@ -542,6 +629,11 @@ p.totalCost {
     div.item {
         width: 600px;
     }
+
+    button#addToCart {
+        padding: 5px;
+    }
+   
 }
 
 @media(max-width: 647px) {
@@ -575,9 +667,13 @@ p.totalCost {
         width: 20px;
         height: 20px;
     }
+
     #backArrowItem {
         width: 20px;
         height: 20px;
+    }
+    div.logOutAlert{
+        right: 15%;
     }
 }
 
@@ -605,7 +701,9 @@ p.totalCost {
     #menuIcon {
         margin-right: 10px;
     }
-
+    div.logOutAlert{
+        right: 30%;
+    }
 }
 
 
@@ -643,6 +741,14 @@ p.totalCost {
 
     div.item {
         width: 450px;
+    }
+
+    button#addToCart {
+        padding: 5px;
+        font-size: 11px;
+    }
+    div.logOutAlert{
+        right: 20%;
     }
 }
 
@@ -685,6 +791,9 @@ p.totalCost {
     div.item {
         width: 400px;
     }
+    div.logOutAlert{
+        right: 17%;
+    }
 }
 
 @media(max-width: 417px) {
@@ -723,6 +832,9 @@ p.totalCost {
     div.item {
         width: 400px;
     }
+    div.logOutAlert{
+        right: 10%;
+    }
 
 }
 
@@ -740,6 +852,13 @@ p.totalCost {
 
     div.item {
         width: 370px;
+    }
+
+    button#addToCart {
+        font-size: 10px;
+    }
+    div.logOutAlert{
+        right: 7%;
     }
 }
 
@@ -769,6 +888,14 @@ p.totalCost {
 
     div.item {
         width: 310px;
+    }
+    div.logOutAlert{
+        right: 23%;
+        width: 200px;
+    }
+    p.confirmQuestion
+    {
+        font-size: 12px;
     }
 }
 
@@ -817,6 +944,9 @@ p.totalCost {
     div.cartHead h2 {
         font-size: 20px;
     }
+    div.logOutAlert{
+        right: 20%;
+    }
 }
 
 @media(max-width: 284px) {
@@ -851,5 +981,8 @@ p.totalCost {
     div.item {
         width: 230px;
         height: 50px;
+    }
+    div.logOutAlert{
+        right: 10%;
     }
 }

@@ -123,22 +123,22 @@ displayOrders();
 
 // Displaying Cart values
 function displayCart() {
-    const order = [
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
+    let cartOrder = [
+        { item: 'Bhurji', count: '1', cost: '12.25' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
+        { item: 'Bhurji', count: '1', cost: '10' },
     ];
     let menuCart = document.querySelector('#orderMenuCart');
-    for (let index = 0; index < order.length; index++) {
-        menuCart.innerHTML += ` <div class="item"><p class="itemName">${order[index].item}</p><div class="ItemCount"><span class="decrement">-</span>${order[index].count}<span class="increment">+</span></div><p class="totalCost">${order[index].cost}</p></div>`;
+    for (let index = 0; index < cartOrder.length; index++) {
+        menuCart.innerHTML += ` <div class="item"><p class="itemName">${cartOrder[index].item}</p><div class="ItemCount"><span class="decrement" id="decrement${index}" onclick="decrementOnClick(${index});">-</span><span id="value${index}">${cartOrder[index].count}</span><span class="increment" id="increment${index}" onclick="incrementOnClick(${index});">+</span></div><p class="totalCost">$<span id='cost${index}'>${cartOrder[index].cost}</span></p></div>`;
     }
 }
 
@@ -147,21 +147,21 @@ displayCart();
 // Displaying Cart values
 function displaySubItems() {
     const order = [
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
-        { item: 'Bhurji', count: '3', cost: '$43' },
+        { item: 'Bhurji', count: '1', cost: '12.25' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
+        { item: 'Bhurji', count: '3', cost: '43' },
     ];
     let subMenu = document.querySelector('#subMenu');
     for (let index = 0; index < order.length; index++) {
-        subMenu.innerHTML += ` <div class="item"><p class="itemName">${order[index].item}</p><div class="ItemCount"><span class="decrement">-</span>${order[index].count}<span class="increment">+</span></div><p class="totalCost">${order[index].cost}</p></div>`;
+        subMenu.innerHTML += ` <div class="item"><p class="itemName">${order[index].item}</p><div class="ItemCount"><span class="decrement" id="subItemDecrement${index}" onclick="subItemDecrementOnClick(${index});">-</span><span id="subItemValue${index}">${order[index].count}</span><span class="increment" id="subItemIncrement${index}" onclick="subItemIncrementOnClick(${index});">+</span></div><p class="totalCost">$<span id='subItemCost${index}'>${order[index].cost}</span></p></div>`;
     }
 }
 
@@ -186,3 +186,65 @@ backItem.addEventListener('click', event => {
     toggleMenu('#menuItem1');
 });
 
+//Incrementing and decrementing the values as per the person
+
+function incrementOnClick(elementId) {
+    let doc = document.getElementById('value' + elementId);
+    let costID = document.getElementById('cost' + elementId);
+    let value = parseInt(doc.innerHTML);
+    totalCost = parseFloat(costID.innerHTML);
+    totalCostBefore = totalCost / value;
+    value += 1;
+    totalCost += totalCostBefore;
+    doc.innerHTML = value;
+    costID.innerHTML = totalCost;
+}
+
+function decrementOnClick(elementId) {
+    let doc = document.getElementById('value' + elementId);
+    let costID = document.getElementById('cost' + elementId);
+    let value = parseInt(doc.innerHTML);
+    totalCost = parseFloat(costID.innerHTML);
+    totalCostBefore = totalCost / value;
+    totalCost -= totalCostBefore;
+    value -= 1;
+    doc.innerHTML = value;
+    costID.innerHTML = totalCost;
+}
+
+
+function subItemIncrementOnClick(elementId) {
+    let doc = document.getElementById('subItemValue' + elementId);
+    let costID = document.getElementById('subItemCost' + elementId);
+    let value = parseInt(doc.innerHTML);
+    totalCost = parseFloat(costID.innerHTML);
+    totalCostBefore = totalCost / value;
+    value += 1;
+    totalCost += totalCostBefore;
+    doc.innerHTML = value;
+    costID.innerHTML = totalCost;
+}
+
+function subItemDecrementOnClick(elementId) {
+    let doc = document.getElementById('subItemValue' + elementId);
+    let costID = document.getElementById('subItemCost' + elementId);
+    let value = parseInt(doc.innerHTML);
+    totalCost = parseFloat(costID.innerHTML);
+    totalCostBefore = totalCost / value;
+    totalCost -= totalCostBefore;
+    value -= 1;
+    doc.innerHTML = value;
+    costID.innerHTML = totalCost;
+}
+// Log out alert
+let alertBox = document.querySelector('.logOutAlert');
+alertBox.style.display = 'none';
+function logOutAlert() {
+
+    if (alertBox.style.display == 'none') {
+        alertBox.style.display = 'flex';
+    }
+    else if (alertBox.style.display != 'none') {
+        alertBox.style.display = 'none';
+    }
+}

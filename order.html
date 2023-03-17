@@ -61,10 +61,17 @@
         </div>
     </div>
     </div>
-
+    <div class="logOutAlert">
+        <img src="img/logo.png" alt="logo_img">
+        <p class="confirmQuestion">Are you sure you want to log out?</p>
+        <div class="buttonDiv">
+            <button class="alertButton" id="yesAlert">Yes</button>
+            <button class="alertButton" id="noAlert" onclick="logOutAlert();">No</button>
+        </div>
+    </div>
 
     <div id="bottomDiv">
-        <button id="logOutIcon">Log out</button>
+        <button id="logOutIcon" onclick="logOutAlert();">Log out</button>
     </div>
 </body>
 <script src="js/order.js"></script>
