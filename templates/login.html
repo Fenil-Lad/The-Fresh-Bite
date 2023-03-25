@@ -1,0 +1,62 @@
+<!-- Experience the taste of freshness at The Fresh Bite - your go-to spot for delicious and healthy meals on campus! -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
+
+    <title>The Fresh Bite | Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logoImg">
+            <img src="{% static 'img/logo.png' %}" alt="logoImg" id="imgLogo">
+            <p>Your go-to spot for delicious and healthy meals on campus!</p>
+        </div>
+        <div class="inputSection">
+            <form action="/login" method='post'>
+            {% csrf_token %}   
+                <input type="text" name="email" id="studentEmail" class="loginInput" placeholder="Enter your email">
+                <input type="password" name="password" id="studentPass" class="loginInput" placeholder="Enter your password">
+                {% comment %} <p id="errorLogin">Error: Incorrect Credentials</p> {% endcomment %}
+                <p id="errorLogin">
+
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+
+                </p>
+                <button id="signIn">Sign In</button>
+
+                {% comment %} {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %} {% endcomment %}
+
+            </form>
+        </div>
+
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

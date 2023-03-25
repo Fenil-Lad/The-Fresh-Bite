@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/order.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'style/order.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap" rel="stylesheet">
@@ -16,9 +17,9 @@
 
 <body>
     <header>
-        <img src="img/logo.png" alt="logoImg" id="imgLogo">
+        <img src="{% static 'img/logo.png' %}" alt="logoImg" id="imgLogo">
         <h1>Orders</h1>
-        <img src="img/menu-icon.png" alt="menu-icon" id="menuIcon" onclick="toggleButton();">
+        <img src="{% static 'img/menu-icon.png' %}" alt="menu-icon" id="menuIcon" onclick="toggleButton();">
     </header>
 
     <div class="container">
@@ -62,10 +63,10 @@
     </div>
     </div>
     <div class="logOutAlert">
-        <img src="img/logo.png" alt="logo_img">
+        <img src="{% static 'img/logo.png' %}" alt="logo_img">
         <p class="confirmQuestion">Are you sure you want to log out?</p>
         <div class="buttonDiv">
-            <button class="alertButton" id="yesAlert">Yes</button>
+            <button class="alertButton" id="yesAlert"><a href="/logout">Yes</a></button>
             <button class="alertButton" id="noAlert" onclick="logOutAlert();">No</button>
         </div>
     </div>
@@ -74,6 +75,6 @@
         <button id="logOutIcon" onclick="logOutAlert();">Log out</button>
     </div>
 </body>
-<script src="js/order.js"></script>
+<script src="{% static 'js/order.js' %}"></script>
 
 </html>
