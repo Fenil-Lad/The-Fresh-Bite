@@ -16,3 +16,18 @@ class User(AbstractUser):
     objects = UserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['userId', 'is_student', 'is_marketplace']
+
+class productDetail(models.Model):
+    productId = models.CharField(max_length=36, primary_key=True)
+    productCategoryId = models.CharField(max_length=36)
+    productBy = models.CharField(max_length=36)
+    productPrice = models.IntegerField()
+    productName = models.CharField(max_length=48)
+    productDesc = models.TextField()
+    productVeg = models.BooleanField()
+
+
+class categoryDetail(models.Model):
+    categoryId = models.CharField(max_length=36, primary_key=True)
+    categoryTitle = models.CharField(max_length=18)
+    categoryBy = models.CharField(max_length=36)
