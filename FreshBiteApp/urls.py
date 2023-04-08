@@ -7,6 +7,6 @@ urlpatterns = [
     path("login", views.SiteLogin, name='Login'),
     path("logout", views.SiteLogout, name='Logout'),
     path("student", views.student, name='student'),
-    path("marketplace", views.marketplace, name='marketplace'),
+    path("merchant", views.merchant, name='merchant'),
     path("create_user", views.createUser, name='Create User from Command Line')
 ]

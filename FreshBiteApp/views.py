@@ -9,10 +9,10 @@ def SiteLogin(request):
     if request.user.is_authenticated:
         if request.user.is_superuser == True:
             return redirect('admin/')
-        elif request.user.is_student == True and request.user.is_marketplace == False:
+        elif request.user.is_student == True and request.user.is_merchant == False:
             return redirect('student')
-        elif request.user.is_student == False and request.user.is_marketplace == True:
-            return redirect('marketplace')
+        elif request.user.is_student == False and request.user.is_merchant == True:
+            return redirect('merchant')
         else:
             return render(request, 'login.html')
 
@@ -30,10 +30,10 @@ def SiteLogin(request):
             login(request, user)
             if request.user.is_superuser == True:
                 return redirect('admin/')
-            elif user.is_student == True and user.is_marketplace == False:
+            elif user.is_student == True and user.is_merchant == False:
                 return redirect('student')
-            elif user.is_student == False and user.is_marketplace == True:
-                return redirect('marketplace')
+            elif user.is_student == False and user.is_merchant == True:
+                return redirect('merchant')
             else:
                 messages.error(request, 'Unknown user, contact administrator.')
                 return render(request, 'login.html')
@@ -54,24 +54,24 @@ def student(request):
     if request.user.is_authenticated:
         if request.user.is_superuser == True:
             return redirect('admin/')
-        elif request.user.is_student == True and request.user.is_marketplace == False:
+        elif request.user.is_student == True and request.user.is_merchant == False:
             return render(request, 'student.html')
-        elif request.user.is_student == False and request.user.is_marketplace == True:
-            return redirect('marketplace')
+        elif request.user.is_student == False and request.user.is_merchant == True:
+            return redirect('merchant')
     else:
         messages.error(request, 'You need to Login First.')
         return render(request, 'login.html')
 
 
-def marketplace(request):
+def merchant(request):
 
     if request.user.is_authenticated:
         if request.user.is_superuser == True:
             return redirect('admin/')
-        elif request.user.is_student == True and request.user.is_marketplace == False:
+        elif request.user.is_student == True and request.user.is_merchant == False:
             return redirect('student')
-        elif request.user.is_student == False and request.user.is_marketplace == True:
-            return render(request, 'marketplace.html')
+        elif request.user.is_student == False and request.user.is_merchant == True:
+            return render(request, 'merchant.html')
     else:
         messages.error(request, 'You need to Login First.')
         return render(request, 'login.html')
@@ -94,9 +94,9 @@ def createUser(request):
     userId = input("user-Id: ")
     password = input("password: ")
     student = bool(input("is_student: "))
-    marketplace = bool(input("is_marketplace: "))
+    merchant = bool(input("is_merchant: "))
     
-    user = User.objects.create_user(email, password, userId=userId, is_student=student, is_marketplace=marketplace, is_verified=True)
+    user = User.objects.create_user(email, password, userId=userId, is_student=student, is_merchant=merchant, is_verified=True)
     user.first_name = input("First Name: ")
     user.last_name = input("Last Name: ")
     user.save()
