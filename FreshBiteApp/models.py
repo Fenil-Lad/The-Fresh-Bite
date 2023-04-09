@@ -38,3 +38,10 @@ class cartDetail(models.Model):
     productCategoryId = models.CharField(max_length=36)
     productQuantity = models.IntegerField()
     productPrice = models.IntegerField()
+
+class orderDetail(models.Model):
+    orderId = models.CharField(max_length=36, primary_key=True)
+    orderDate = models.IntegerField()
+    orderBy = models.CharField(max_length=36)
+    orderTo = models.CharField(max_length=36)
+    orderCartValue = models.IntegerField()
