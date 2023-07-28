@@ -22,5 +22,6 @@ admin.site.index_title = "Welcome to Fresh Bite"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),
     path('', include('FreshBiteApp.urls')),
 ]
