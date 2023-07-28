@@ -2,4 +2,3 @@ __pycache__
 .vscode
 clean.py
 testusers.txt
-migrations
