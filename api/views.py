@@ -96,9 +96,3 @@ def menu(request):
 
         case default:
             return Response({'status': 'failed', 'error_code': 'UserNotFound', 'message': 'Authenticated User not found in the system.'})
-
-    # responseSet = User.objects.filter(is_merchant=True)
-    # print(responseSet)
-    # for merchant in responseSet:
-    #     res['merchants'].append(merchant.userId)
-    # return Response(res)
